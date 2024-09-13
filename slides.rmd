@@ -1,0 +1,143 @@
+---
+title: "Beamer Presentation"
+subtitle: "A Pandoc template"
+author: "Jane Smith"
+institute: "GESIS – Leibniz Institute for the Social Sciences\\newline Cologne"
+output:
+    beamer_presentation:
+        keep_tex: yes
+        latex_engine: xelatex
+aspectratio: 169
+background-image: "template/background1.pdf"
+date: "24.10.2023"
+theme: metropolis
+colortheme: dove
+fontfamily: sourcesanspro
+fontsize: 10
+bibliography: "library.bib"
+header-includes: |
+    \usefonttheme[onlylarge]{structurebold}
+    \setbeamerfont{page number in head/foot}{size=\tiny}
+    \date{\vspace{2.7em}\insertdate} % Note: depending on the pandoc (or latex template) version, this redefinition might (not) be necessary
+    \setbeamertemplate{frame footer}{\insertdate}
+    % Redefine the frametitle to set the opacity of the filling and text (https://tex.stackexchange.com/questions/270082/beamer-how-to-set-frametitle-box-translucent-so-that-backeground-image-can-be)
+    \makeatletter
+        \setbeamertemplate{frametitle}
+        {
+          \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+          \@tempdima=\textwidth%
+          \advance\@tempdima by\beamer@leftmargin%
+          \advance\@tempdima by\beamer@rightmargin%
+          \pgfsetfillopacity{0}       %<------ fix filling opacity
+          \begin{beamercolorbox}[sep=0.3cm,left,wd=\the\@tempdima]{frametitle}
+            \usebeamerfont{frametitle}%
+            \vbox{}\vskip-.45ex%
+            \if@tempswa\else\csname beamer@fteleft\endcsname\fi%
+            \strut\pgfsetfillopacity{1}\insertframetitle\strut\par%  <---- text opacity
+            {%
+              \ifx\insertframesubtitle\@empty%
+              \else%
+              {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+              \fi
+            }%
+            \vskip-1ex%
+            \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+          \end{beamercolorbox}%
+        }
+    \makeatother
+    % Set a mode<all> command to include to use in include-before and avoid stripping of the command
+    \newcommand{\modeall}{\mode<all>}
+    \newcommand{\setbgimage}[1]{
+        \modeall\usebackgroundtemplate{\includegraphics[width=\paperwidth]{#1}}
+        \modeall\pgfdeclareimage[width=\paperwidth,height=\paperheight]{background}{#1}
+        \modeall\usebackgroundtemplate{\pgfuseimage{background}}
+        \mode*
+    }
+    % Set a default background image command to re-use later
+    \newcommand{\defaultbgimage}{template/background2.pdf}
+    \newcommand{\setdefaultbgimage}{
+        \setbgimage{\defaultbgimage}
+    }
+    % Set font color for title page elements
+    \setbeamercolor{title}{fg=white}
+    \setbeamercolor{subtitle}{fg=white}
+    \setbeamercolor{author}{fg=white}
+    \setbeamercolor{institute}{fg=white}
+    \setbeamercolor{date}{fg=white}
+include-before: |
+   \setdefaultbgimage
+---
+
+
+# First slide
+
+This is the first slide.
+
+# {.plain}
+
+\section{First section}
+
+# Second slide
+
+::: {.columns}
+
+:::: {.column width="50%"}
+
+This is slide number 2
+
+::::
+
+:::: {.column width="50%"}
+
+with columns....
+
+and a citation [@sample2023].
+
+::::
+
+:::
+
+
+# Third slide
+
+A last slide to wrap things up.
+
+
+```{=latex}
+% Change the background mid-slides
+% end the last slide
+\end{frame}
+
+% change the background image
+\mode<all>\setbgimage{template/background3.pdf}
+
+% start a new slide so that it will end when the next slide starts
+\begin{frame}<0| handout:0>
+
+```
+
+
+# {.plain}
+
+Thank you for your attention!
+
+```{=latex}
+% Change the background mid-slides
+% end the last slide
+\end{frame}
+
+% change the background image
+\mode<all>\setbgimage{template/background4.pdf}
+
+% start a new slide so that it will end when the next slide starts
+\begin{frame}<0| handout:0>
+```
+
+# References
+
+\begingroup
+
+\footnotesize
+::: {#refs}
+:::
+\endgroup
