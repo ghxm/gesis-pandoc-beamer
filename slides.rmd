@@ -18,8 +18,7 @@ bibliography: "library.bib"
 header-includes: |
     \usefonttheme[onlylarge]{structurebold}
     \setbeamerfont{page number in head/foot}{size=\tiny}
-    \date{\vspace{2.7em}\insertdate} % Note: depending on the pandoc (or latex template) version, this redefinition might (not) be necessary
-    \setbeamertemplate{frame footer}{\insertdate}
+    \date{\vspace{2.8em}\insertdate} % Note: depending on the pandoc (or latex template) version, this redefinition might (not) be necessary
     % Redefine the frametitle to set the opacity of the filling and text (https://tex.stackexchange.com/questions/270082/beamer-how-to-set-frametitle-box-translucent-so-that-backeground-image-can-be)
     \makeatletter
         \setbeamertemplate{frametitle}
@@ -59,13 +58,37 @@ header-includes: |
         \setbgimage{\defaultbgimage}
     }
     % Set font color for title page elements
+    \setbeamercolor{hrule}{fg=white}
     \setbeamercolor{title}{fg=white}
     \setbeamercolor{subtitle}{fg=white}
     \setbeamercolor{author}{fg=white}
     \setbeamercolor{institute}{fg=white}
     \setbeamercolor{date}{fg=white}
+    % no footer for the title slide
+    \setbeamertemplate{frame footer}{}
+    % define a new title slide template
+    \defbeamertemplate*{title page}{customized}[1][]
+    {
+      % $if(titlegraphic)$
+      \vfill
+      % $endif$
+      \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+      \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+      \bigskip
+      % \hrule
+      \bigskip
+      \usebeamerfont{author}\insertauthor\par
+      \usebeamerfont{institute}\insertinstitute\par
+      \smallskip
+      \usebeamerfont{date}\insertdate\par
+      % \hfill\usebeamercolor[fg]{titlegraphic}
+      % $if(titlegraphic)$
+      %  \inserttitlegraphic
+      % $endif$
+    }
 include-before: |
-   \setdefaultbgimage
+    \setdefaultbgimage
+    \modeall\setbeamertemplate{frame footer}{\insertdate}
 ---
 
 
@@ -138,6 +161,8 @@ Thank you for your attention!
 \begingroup
 
 \footnotesize
+
 ::: {#refs}
 :::
+
 \endgroup
