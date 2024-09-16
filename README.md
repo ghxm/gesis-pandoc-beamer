@@ -1,6 +1,6 @@
 # Adapting the GESIS presentation template to pandoc / Rmarkdown for use with `beamer`
 
-[**Preview**](slides.pdf)
+[**Preview**](slides.pdf), *tested to work with pandoc 3.4 on Windows*
 
 This is a simple (R)markdown template for creating slides with pandoc and `beamer` in the GESIS presentation layout. It is based on the GESIS template for PowerPoint presentations. The template provided here is based on the `metropolis` theme for `beamer` with minor tweaks and custom background images. 
 
