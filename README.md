@@ -4,8 +4,7 @@
 
 *tested to work with knitr 1.48  & pandoc 3.4 on Windows, pandoc-only or Quarto setups might require adjustments*
 
-This is a simple (R)markdown template for creating slides with pandoc and `beamer` in the GESIS presentation layout. It is based on the GESIS template for PowerPoint presentations. The template provided here is based on the `metropolis` theme for `beamer` with minor tweaks and custom background images. 
-
+This is a simple & unofficial (R)markdown template for creating slides with pandoc and `beamer` in the GESIS presentation layout. It is based on the GESIS template for PowerPoint presentations. The template provided here is based on the `metropolis` theme for `beamer` with minor tweaks and custom background images. 
 
 The aim is to provide a simple template that can be used with pandoc and Rmarkdown to create slides in the GESIS layout without specifying a custom LaTeX template for pandoc. This requires a few awkward workarounds:
 
