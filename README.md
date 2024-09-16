@@ -38,6 +38,10 @@ The aim is to provide a simple template that can be used with pandoc and Rmarkdo
 
 > **Note:** If you do not want to use the References as shown in the example, you can remove the `references` field from the YAML header. If you want to use references, it's best to remove the frame as the LaTeX compiler will throw an error if you try to include an empty list of references.
 
+## Related
+
+- [gesiscss/quarto-revealjs-fakegesis](https://github.com/gesiscss/quarto-revealjs-fakegesis)
+
 
 ## TODO
 
