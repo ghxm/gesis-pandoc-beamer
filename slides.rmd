@@ -8,7 +8,7 @@ output:
         keep_tex: yes
         latex_engine: xelatex
 aspectratio: 169
-background-image: "template/background1.pdf"
+background-image: "template/background3.pdf"
 date: "24.10.2023"
 theme: metropolis
 colortheme: dove
@@ -53,7 +53,7 @@ header-includes: |
         \mode*
     }
     % Set a default background image command to re-use later
-    \newcommand{\defaultbgimage}{template/background2.pdf}
+    \newcommand{\defaultbgimage}{template/background8.pdf}
     \newcommand{\setdefaultbgimage}{
         \setbgimage{\defaultbgimage}
     }
@@ -132,7 +132,7 @@ A last slide to wrap things up.
 \end{frame}
 
 % change the background image
-\mode<all>\setbgimage{template/background3.pdf}
+\mode<all>\setbgimage{template/background12.pdf}
 
 % start a new slide so that it will end when the next slide starts
 \begin{frame}<0| handout:0>
@@ -140,9 +140,17 @@ A last slide to wrap things up.
 ```
 
 
-# {.plain}
+# {.plain.c}
 
-Thank you for your attention!
+\color{white}
+
+\LARGE
+\centering
+
+**Thank you!**
+
+
+
 
 ```{=latex}
 % Change the background mid-slides
@@ -150,7 +158,7 @@ Thank you for your attention!
 \end{frame}
 
 % change the background image
-\mode<all>\setbgimage{template/background4.pdf}
+\mode<all>\setbgimage{template/background8.pdf}
 
 % start a new slide so that it will end when the next slide starts
 \begin{frame}<0| handout:0>
