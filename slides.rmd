@@ -140,7 +140,7 @@ A last slide to wrap things up.
 ```
 
 
-# {.plain.c}
+# {.plain .c}
 
 \color{white}
 
