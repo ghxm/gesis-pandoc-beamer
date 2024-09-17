@@ -47,7 +47,7 @@ The aim is to provide a simple template that can be used with pandoc and Rmarkdo
 
 - [ ] Adjust the font size and style to match the GESIS template
 - [x] Add a custom title page without an `\hrule` and footer
-- [ ] Add all background options and adjust as used in the Powerpoint template
+- [x] Add all background options and adjust as used in the Powerpoint template
 - [ ] Custom section background?
 - [ ] Put the includes in their own file and include that file in the YAML header
 - [ ] Add pure-pandoc + Quarto example files
