@@ -164,7 +164,7 @@ A last slide to wrap things up.
 \begin{frame}<0| handout:0>
 ```
 
-# References
+# References {.allowframebreaks}
 
 \begingroup
 
