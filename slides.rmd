@@ -8,7 +8,6 @@ output:
         keep_tex: yes
         latex_engine: xelatex
 aspectratio: 169
-background-image: "template/background3.pdf"
 date: "24.10.2023"
 theme: metropolis
 colortheme: dove
@@ -16,6 +15,9 @@ fontfamily: sourcesanspro
 fontsize: 10
 bibliography: "library.bib"
 header-includes: |
+    % set the title background
+    \pgfdeclareimage[width=\paperwidth,height=\paperheight]{bgtitle}{template/background3.pdf}
+    \usebackgroundtemplate{\pgfuseimage{bgtitle}}
     \usefonttheme[onlylarge]{structurebold}
     \setbeamerfont{page number in head/foot}{size=\tiny}
     \date{\vspace{2.8em}\insertdate} % Note: depending on the pandoc (or latex template) version, this redefinition might (not) be necessary
