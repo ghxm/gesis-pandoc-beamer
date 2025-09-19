@@ -38,11 +38,6 @@ The aim is to provide a simple template that can be used with pandoc and Rmarkdo
 
 > **Note:**  If you do not want to use a "References" slide, as shown in the exmaple, it's best to remove the frame as the LaTeX compiler will throw an error if you try to include an empty list of references.
 
-## Related
-
-- [gesiscss/quarto-revealjs-fakegesis](https://github.com/gesiscss/quarto-revealjs-fakegesis)
-
-
 ## TODO
 
 - [ ] Adjust the font size and style to match the GESIS template
