@@ -1,0 +1,7 @@
+format:
+  beamer:
+    keep-tex: true
+    pdf-engine: xelatex
+    include-in-header: template/preamble.tex
+    include-before-body: template/before-body.tex
+    cite-method: citeproc
