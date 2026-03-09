@@ -859,6 +859,6 @@ CLAUDE.md
 tasks/
 *.tex
 *.pdf
-!template/*.pdf
+!template/*.tex
 !slides.pdf
 .idea/
