@@ -1,3 +1,4 @@
+date-format: "DD.MM.YYYY"
 format:
   beamer:
     keep-tex: true

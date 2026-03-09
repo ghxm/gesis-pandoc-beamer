@@ -53,25 +53,40 @@ rmarkdown::render("slides.md",
 
 ## Usage notes
 
-### Background switching
+### Choosing background images
 
-Backgrounds cannot be changed via markdown alone. Mid-presentation background changes require raw LaTeX blocks that: (1) end the current frame, (2) call `\setbgimage{path}`, (3) start a dummy frame:
+The template ships with 12 background images (`template/background1-12.pdf`). By default, the title slide uses `background3.pdf` and all other slides use `background8.pdf`.
 
-`````text
-```{=latex}
-% Change the background mid-slides
-% end the last slide
-\end{frame}
+To change the defaults, add `header-includes` to your YAML front matter:
 
-% change the background image
-\mode<all>\setbgimage{path/to/image}
-
-% start a new slide so that it will end when the next slide starts
-\begin{frame}<0| handout:0>
+```yaml
+header-includes: |
+    \newcommand{\titlebgimage}{template/background5.pdf}
+    \newcommand{\defaultbgimage}{template/background1.pdf}
 ```
-`````
 
-To avoid additional complexity when changing the background, stick to slide level 1, i.e. use `#` to add a new slide. If you want to use `#` to create a new section, you might need to adjust the code above to end the last block in addition to the frame and start a new one.
+### Switching backgrounds mid-presentation
+
+To change the background starting from the next slide, place `\switchbg{path}` on any slide:
+
+```markdown
+# Last content slide
+
+Some content here.
+
+\switchbg{template/background12.pdf}
+
+# {.plain .c}
+
+\color{white}
+**Thank you!**
+```
+
+To switch back to the default background, use `\switchtodefaultbg`.
+
+### Date format
+
+Use ISO dates in the YAML front matter (`date: "2023-10-24"`). Pandoc and RMarkdown pass the string as-is. Quarto parses it and applies the display format set in `_quarto.yml` (`date-format: "DD.MM.YYYY"`).
 
 ### Section slides
 
